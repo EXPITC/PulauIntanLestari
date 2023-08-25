@@ -1,113 +1,196 @@
-import Image from 'next/image'
+"use client";
+
+import Products, { products } from "@/components/Product";
+import Catalouges, { catalouge } from "@/components/catalouge";
+import YTEmbed from "@/components/ytEmbed";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { Link } from "@chakra-ui/next-js";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Icon,
+  Img,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
+import { GiCheckMark } from "react-icons/gi";
+
+const promo = [
+  "Fully Customized from Fiber to Fashion",
+  "100,000+ Fabric to Choose",
+  "Satisfaction Guarantee",
+];
+
+const ourProducts: products = [
+  {
+    link: "/horizon-lacoste",
+    imgUrl:
+      "https://pulauintanlestari.com/wp-content/uploads/2021/03/PRODUCT_3A-1.jpg",
+    name: "horizon-lacoste",
+  },
+  {
+    link: "/tange-red-jersey",
+    imgUrl:
+      "https://pulauintanlestari.com/wp-content/uploads/2021/03/PRODUCT_1A.jpg",
+    name: "tange-red-jersey",
+  },
+  {
+    link: "/single-maze",
+    imgUrl:
+      "https://pulauintanlestari.com/wp-content/uploads/2021/03/PRODUCT_2A.jpg",
+    name: "single-maze",
+  },
+  {
+    link: "/peachy-interlock",
+    imgUrl:
+      "https://pulauintanlestari.com/wp-content/uploads/2021/03/PRODUCT_5A.jpg",
+    name: "peachy-interlock",
+  },
+];
+
+const catalouges: catalouge = [
+  {
+    link: "https://www.tokopedia.com/pulauintanlestari/pocket-catalogue-sports-1-0?whid=0",
+    imgUrl:
+      "https://pulauintanlestari.com/wp-content/uploads/2021/07/POCKET-CATALOGUE_1.jpg",
+    name: "Pocket Catalogue",
+    price: 25000,
+    type: "Sports 1.0",
+  },
+  {
+    link: "https://www.tokopedia.com/pulauintanlestari/complete-catalogue?whid=0",
+    imgUrl:
+      "https://pulauintanlestari.com/wp-content/uploads/2021/07/COMPLETE-CATALOGUE_1.jpg",
+    name: "Complete Catalogue",
+    price: 500000,
+    type: "Series 1.0",
+  },
+];
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <>
+      {/* <Flex */}
+      {/*   minH="full" */}
+      {/*   flexDir="column" */}
+      {/*   justify="space-between" */}
+      {/*   mt={{ base: 20, lg: 20 }} */}
+      {/*   gap={{ base: 20, lg: 28 }} */}
+      {/*   align="center" */}
+      {/*   px={{ base: "5", md: "10" }} */}
+      {/* > */}
+      <Flex
+        w="full"
+        flexDir={{ base: "column", md: "column", lg: "row" }}
+        align="center"
+        justify="center"
+        gap="3"
+        mt={{ base: 20, lg: 20 }}
+        pt="1"
+      >
+        <Img
+          src="https://pulauintanlestari.com/wp-content/uploads/2021/03/BANNER_1REV.png"
+          alt="product"
+          w={{ base: "md", md: "480px" }}
         />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Stack
+          spacing="5"
+          justifyContent={{ base: "center", lg: "normal" }}
+          alignItems={{ base: "center", lg: "normal" }}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          <Heading
+            as="h1"
+            color="gray.600"
+            fontSize={{ base: "xx-large", lg: "xxx-large" }}
+            fontWeight="bold"
+            lineHeight={{ base: "8", lg: "normal" }}
+          >
+            One Stop Solution
+            <br />
+            for Fashion Business
+          </Heading>
+          <Box>
+            {promo.map((text, i) => (
+              <Text
+                as="p"
+                key={i}
+                fontWeight="medium"
+                fontSize={{ base: "md", lg: "large" }}
+              >
+                <Icon
+                  as={GiCheckMark}
+                  color="green.500"
+                  display="inline"
+                  mr="3"
+                />
+                {text}
+              </Text>
+            ))}
+          </Box>
+          <Link
+            display="flex"
+            href="https://pulauintanlestari.com/contact-us/?id=1"
+            target="_blank"
+          >
+            <Button
+              rightIcon={<ArrowForwardIcon />}
+              w="40"
+              border="1px"
+              color="white"
+              bg="signatureRed"
+              fontSize="medium"
+              _hover={{
+                fontSize: "large",
+                bg: "none",
+                border: "2px solid",
+                borderColor: "signatureRed",
+                color: "signatureRed",
+              }}
+            >
+              <Box
+                as="span"
+                bg="signatureRed"
+                _hover={{
+                  bg: "white",
+                }}
+                className="animate-ping absolute inline-flex h-[60%] w-[35%] hover:w-[45%] rounded-md opacity-75"
+              />
+              Start Now
+            </Button>
+          </Link>
+        </Stack>
+      </Flex>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+      {/* Yt Section */}
+      <Stack w="full" direction="column" spacing={{ base: 7, lg: 10 }}>
+        <Heading
+          as="h2"
+          fontSize={{ base: "xl", lg: "xx-large" }}
+          color="signatureDarkBlue"
+          fontWeight="bold"
+          letterSpacing="wide"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          Why Pulau Intan Lestari
+        </Heading>
+        <Flex align="center" justify="center">
+          <YTEmbed
+            src="q1Cv7_UlJCM"
+            h={{ base: "280px", md: "480px", lg: "720px" }}
+            w={{ base: "full", md: "720px", lg: "1180px" }}
+            rounded="2xl"
+          />
+        </Flex>
+      </Stack>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
+      {/* Product section */}
+      <Stack direction="column" spacing="10">
+        <Products products={ourProducts} sectionTitle="Our Products" />
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+        <Catalouges catalouge={catalouges} sectionTitle={"Product Catalogue"} />
+      </Stack>
+      {/* </Flex> */}
+    </>
+  );
 }
