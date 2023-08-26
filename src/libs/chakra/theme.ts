@@ -57,6 +57,8 @@ const colors = {
   signatureBlack: "#202023",
   signatureDarkBlue: "#0e2d51",
   signatureGrey: "#54595F",
+  singatureDarkSilver: "#EDEAEA",
+  signatureSilver: "#F4F4F4",
 };
 
 const theme = extendTheme({

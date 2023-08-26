@@ -46,7 +46,10 @@ const Footer = () => {
       align="center"
       justify="center"
       mt="5"
-      px="7"
+      px={{
+        base: "1",
+        md: "7",
+      }}
       pt="9"
       pb="5"
       gap="5"

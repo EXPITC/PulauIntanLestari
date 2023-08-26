@@ -39,7 +39,7 @@ const navLink = [
   },
   {
     name: "Services",
-    link: "/Services",
+    link: "/services",
   },
   {
     name: "Products",
