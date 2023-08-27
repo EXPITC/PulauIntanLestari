@@ -28,25 +28,25 @@ const ourProducts: products = [
     link: "/horizon-lacoste",
     imgUrl:
       "https://pulauintanlestari.com/wp-content/uploads/2021/03/PRODUCT_3A-1.jpg",
-    name: "horizon-lacoste",
+    name: "horizon lacoste",
   },
   {
     link: "/tange-red-jersey",
     imgUrl:
       "https://pulauintanlestari.com/wp-content/uploads/2021/03/PRODUCT_1A.jpg",
-    name: "tange-red-jersey",
+    name: "tange red jersey",
   },
   {
     link: "/single-maze",
     imgUrl:
       "https://pulauintanlestari.com/wp-content/uploads/2021/03/PRODUCT_2A.jpg",
-    name: "single-maze",
+    name: "single maze",
   },
   {
     link: "/peachy-interlock",
     imgUrl:
       "https://pulauintanlestari.com/wp-content/uploads/2021/03/PRODUCT_5A.jpg",
-    name: "peachy-interlock",
+    name: "peachy interlock",
   },
 ];
 
@@ -72,15 +72,6 @@ const catalouges: catalouge = [
 export default function Home() {
   return (
     <>
-      {/* <Flex */}
-      {/*   minH="full" */}
-      {/*   flexDir="column" */}
-      {/*   justify="space-between" */}
-      {/*   mt={{ base: 20, lg: 20 }} */}
-      {/*   gap={{ base: 20, lg: 28 }} */}
-      {/*   align="center" */}
-      {/*   px={{ base: "5", md: "10" }} */}
-      {/* > */}
       <Flex
         w="full"
         flexDir={{ base: "column", md: "column", lg: "row" }}
@@ -185,12 +176,11 @@ export default function Home() {
       </Stack>
 
       {/* Product section */}
-      <Stack direction="column" spacing="10">
+      <Stack direction="column" spacing="10" zIndex="0">
         <Products products={ourProducts} sectionTitle="Our Products" />
 
         <Catalouges catalouge={catalouges} sectionTitle={"Product Catalogue"} />
       </Stack>
-      {/* </Flex> */}
     </>
   );
 }

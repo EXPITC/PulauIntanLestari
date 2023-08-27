@@ -21,7 +21,7 @@ const links = [
 
   {
     name: "Products Catalog",
-    link: "/products-catalog",
+    link: "/products",
   },
   {
     name: "Discover",

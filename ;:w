@@ -1,0 +1,135 @@
+"use client";
+
+import Gallery from "@/components/gallery";
+import {
+  Box,
+  Button,
+  Flex,
+  Grid,
+  GridItem,
+  Heading,
+  Image,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
+
+const usedProductImg = [
+  "https://pulauintanlestari.com/wp-content/uploads/2021/03/ICON-PRODUCT-12.png",
+  "https://pulauintanlestari.com/wp-content/uploads/2021/03/ICON-PRODUCT-09.png",
+  "https://pulauintanlestari.com/wp-content/uploads/2021/03/ICON-PRODUCT-07.png",
+  "https://pulauintanlestari.com/wp-content/uploads/2021/03/ICON-PRODUCT-05-150x150.png",
+  "https://pulauintanlestari.com/wp-content/uploads/2021/03/ICON-PRODUCT13-13.png",
+];
+
+const DetailProduct = () => {
+  return (
+    <Stack direction="row" w="full" maxW="1440px" pb="20" border="1px">
+      <Box w="57%" position="relative" h="460px">
+        <Gallery />
+      </Box>
+      <Stack border="1px" w="43%" gap="3">
+        <Box>
+          <Text fontWeight="medium" color="signatureDarkBlue" mb="2">
+            Preview
+          </Text>
+          <Heading as="h2" color="signatureRed" fontSize="x-large">
+            2XB.0286
+          </Heading>
+          <Text fontWeight="bold" fontSize="lg" color="signatureDarkBlue">
+            Oris Bowl
+          </Text>
+        </Box>
+
+        <Stack spacing="3">
+          <Flex
+            align="center"
+            justify="space-evenly"
+            w="full"
+            py="4"
+            rounded="lg"
+            bg="whitesmoke"
+          >
+            <Box w="fit-content" textAlign="center">
+              <Text color="signatureDarkBlue">Width</Text>
+              <Text color="signatureRed" fontWeight="bold" fontSize="x-large">
+                74
+              </Text>
+              <Text color="signatureDarkBlue" fontWeight="bold" fontSize="lg">
+                Inch
+              </Text>
+            </Box>
+            <Box w="fit-content" textAlign="center">
+              <Text color="signatureDarkBlue">Weight</Text>
+              <span>
+                <Text
+                  color="signatureDarkBlue"
+                  mr="1"
+                  display="inline"
+                  fontWeight="bold"
+                >
+                  ±
+                </Text>
+                <Text
+                  color="signatureRed"
+                  fontWeight="bold"
+                  display="inline"
+                  fontSize="x-large"
+                >
+                  245
+                </Text>
+              </span>
+              <Text color="signatureDarkBlue" fontWeight="bold" fontSize="lg">
+                Gsm
+              </Text>
+            </Box>
+          </Flex>
+          <Box>
+            <Text color="signatureDarkBlue" fontWeight="medium">
+              Fabric Type
+            </Text>
+            <Text color="signatureDarkBlue" fontWeight="bold" fontSize="large">
+              Interlock
+            </Text>
+          </Box>
+        </Stack>
+
+        <Box>
+          <Text color="singatureDarkBlue" fontWeight="medium">
+            Composition
+          </Text>
+          <Text color="signatureDarkBlue" fontWeight="bold" fontSize="large">
+            33% Cotton, 67% Polyester
+          </Text>
+        </Box>
+
+        <Box>
+          <Text color="signatureDarkBlue" fontWeight="medium" mb="1">
+            Commonly Used for :
+          </Text>
+          <Grid
+            templateColumns="repeat(5, 1fr)"
+            h="20"
+            alignItems="center"
+            justifyContent="center"
+          >
+            {usedProductImg.map((l, i) => (
+              <GridItem key={i} h="inherit">
+                <Image
+                  src={l}
+                  alt="use by product"
+                  h="full"
+                  w="full"
+                  objectFit="scale-down"
+                />
+              </GridItem>
+            ))}
+          </Grid>
+        </Box>
+
+        <Button>Click Here to Order</Button>
+      </Stack>
+    </Stack>
+  );
+};
+
+export default DetailProduct;
