@@ -1,6 +1,6 @@
 "use client";
 
-import Products, { products } from "@/components/Product";
+import Products, { products } from "@/components/product";
 
 const listProduct: products = [
   {

@@ -1,6 +1,6 @@
 "use client";
 
-import RandomProduct from "@/components/RandomProduct";
+import RandomProduct from "@/components/randomProduct";
 import Gallery from "@/components/gallery";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import { Link } from "@chakra-ui/next-js";

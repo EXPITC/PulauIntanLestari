@@ -1,6 +1,6 @@
 "use client";
 
-import Products, { products } from "./Product";
+import Products, { products } from "./product";
 
 const randomList: products = [
   {

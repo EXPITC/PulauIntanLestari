@@ -1,7 +1,7 @@
 "use client";
 
 import { Flex } from "@chakra-ui/react";
-import DrawerNav from "./DrawerNav";
+import DrawerNav from "./drawerNav";
 import Header from "./header";
 import Footer from "./footer";
 
