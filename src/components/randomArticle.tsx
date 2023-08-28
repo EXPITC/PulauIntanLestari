@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-no-undef */
 "use client";
 
-import { articles } from "@/app/discover/page";
 import {
   Flex,
   Grid,
@@ -11,6 +10,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import ArticleCard from "./articleCard";
+import articles from "@/libs/dataRaw/articles";
 
 const RandomArticle = () => {
   const randomArticles = articles.slice(

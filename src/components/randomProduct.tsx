@@ -29,7 +29,7 @@ const randomList: products = [
   },
 ];
 
-const RandomProduct = ({ variant2 }: { variant2: boolean }) => (
+const RandomProduct = ({ variant2 = false }: { variant2?: boolean }) => (
   <>
     <Products
       products={randomList}

@@ -203,7 +203,10 @@ const Panel = ({ img, content }: panelProps) => (
         justify="space-between"
         gap={{ base: "5", md: "2", lg: "5" }}
         align="center"
-        maxW="55%"
+        maxW={{
+          base: "full",
+          md: "55%",
+        }}
       >
         <Box
           h={{

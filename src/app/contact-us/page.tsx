@@ -1,6 +1,6 @@
 "use client";
 
-import RandomProduct from "@/components/RandomProduct";
+import RandomProduct from "@/components/randomProduct";
 import Map from "@/components/map";
 import {
   Box,
@@ -15,17 +15,22 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import { ChangeEvent, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 const ContactUs = () => {
   const [isError, setError] = useState({
     phone: false,
     name: false,
+    text: false,
   });
   const [isLoading, setLoading] = useState(false);
+
+  const searchParams = useSearchParams();
 
   const [form, setForm] = useState({
     name: "",
     phone: "",
+    text: "",
   });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
@@ -38,11 +43,21 @@ const ContactUs = () => {
       setForm({
         name: "",
         phone: "",
+        text: "",
       });
     }, 1000);
 
     return () => clearTimeout(timeout);
   }, [isLoading]);
+
+  useEffect(() => {
+    if (!searchParams.get("id")) return;
+    setForm((prev) => ({
+      ...prev,
+      text: "Hi, I want to order 2XB.0286 – Oris Bowl",
+    }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Stack w="full" maxW="1440px" spacing="8">
@@ -126,8 +141,16 @@ const ContactUs = () => {
                 <FormErrorMessage>Phone number is required.</FormErrorMessage>
               )}
             </FormControl>
-            <FormControl isInvalid={isError.phone} isRequired>
-              <Textarea placeholder="Please leave some message" h="60" />
+            <FormControl isInvalid={isError.text} isRequired>
+              <Textarea
+                name="text"
+                placeholder="Please leave some message"
+                h="60"
+                value={form.text}
+                onChange={(e) =>
+                  setForm((prev) => ({ ...prev, text: e.target.value }))
+                }
+              />
             </FormControl>
             <Button
               mt={4}
@@ -136,12 +159,14 @@ const ContactUs = () => {
               type="submit"
               onClick={(e) => {
                 e.preventDefault();
-                if (isError.name || isError.phone)
-                  return setError({ name: false, phone: false });
+                if (isError.name || isError.phone || isError.text)
+                  return setError({ name: false, phone: false, text: false });
                 if (form.name === "")
                   return setError((prev) => ({ ...prev, name: true }));
                 if (form.phone === "")
                   return setError((prev) => ({ ...prev, phone: true }));
+                if (form.text === "")
+                  return setError((prev) => ({ ...prev, text: true }));
                 setLoading(true);
               }}
             >

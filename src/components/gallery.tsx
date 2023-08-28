@@ -1,13 +1,8 @@
 "use client";
 
-import { listProduct } from "@/app/products/page";
+import listProduct from "@/libs/dataRaw/products";
 import { Box, Flex, Grid, chakra, shouldForwardProp } from "@chakra-ui/react";
-import {
-  motion,
-  AnimateSharedLayout,
-  AnimatePresence,
-  isValidMotionProp,
-} from "framer-motion";
+import { motion, AnimatePresence, isValidMotionProp } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 

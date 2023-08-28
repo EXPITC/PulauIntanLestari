@@ -1,6 +1,7 @@
 "use client";
 
 import RandomArticle from "@/components/randomArticle";
+import articles from "@/libs/dataRaw/articles";
 import {
   AspectRatio,
   Box,
@@ -25,7 +26,6 @@ import {
   BsTwitter,
   BsWhatsapp,
 } from "react-icons/bs";
-import { articles } from "../page";
 
 const socials = [
   {

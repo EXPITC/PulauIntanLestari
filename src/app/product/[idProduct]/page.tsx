@@ -193,11 +193,7 @@ const DetailProduct = () => {
             </Grid>
           </Box>
 
-          <Link
-            display="flex"
-            href="https://pulauintanlestari.com/contact-us/?id=1"
-            target="_blank"
-          >
+          <Link display="flex" href="/contact-us/?id=1">
             <Button
               w="full"
               border="2px"

@@ -13,6 +13,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import { Link } from "@chakra-ui/next-js";
 
 const ChakraImage = chakra(motion.img, {
   /**
@@ -63,11 +64,13 @@ const Header = () => {
         }}
       >
         <NavBarButton />
-        <ChakraImage
-          src="https://devnew.pulauintanlestari.com/wp-content/uploads/2021/03/cropped-LOGO-PIL-02.png"
-          alt="brand"
-          style={{ width: imageSize }}
-        />
+        <Link href="/">
+          <ChakraImage
+            src="https://devnew.pulauintanlestari.com/wp-content/uploads/2021/03/cropped-LOGO-PIL-02.png"
+            alt="brand"
+            style={{ width: imageSize }}
+          />
+        </Link>
       </ChakraFlex>
       <Box h={{ base: "20", md: "28", lg: "32" }} />
     </>
