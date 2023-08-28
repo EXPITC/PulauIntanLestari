@@ -6,7 +6,7 @@ import {
   shouldForwardProp,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { NavBarButton } from "./DrawerNav";
+import { NavBarButton } from "./drawerNav";
 import {
   isValidMotionProp,
   motion,

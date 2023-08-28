@@ -125,4 +125,4 @@ const Discover = () => {
   );
 };
 
-export default Discover;
+export { Discover as default, articles };

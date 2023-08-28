@@ -1,6 +1,6 @@
 "use client";
 
-import Products, { products } from "@/components/Product";
+import Products, { products } from "@/components/product";
 import Catalouges, { catalouge } from "@/components/catalouge";
 import YTEmbed from "@/components/ytEmbed";
 import { ArrowForwardIcon } from "@chakra-ui/icons";

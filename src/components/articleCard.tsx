@@ -12,11 +12,9 @@ import {
   Card,
   CardBody,
   CardFooter,
-  Divider,
   Heading,
   Image,
   Stack,
-  Text,
 } from "@chakra-ui/react";
 
 export interface articleCard {

@@ -26,7 +26,9 @@ const usedProductImg = [
 ];
 
 const DetailProduct = () => {
-  const nameProduct = usePathname().replace("/product/", "").replace("-", " ");
+  const nameProduct = usePathname()
+    .replace("/product/", "")
+    .replaceAll("-", " ");
 
   return (
     <Stack maxW="1440px" w="full" spacing="16">
