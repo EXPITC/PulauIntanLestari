@@ -37,15 +37,24 @@ function ProductImage({
 const Gallery = () => {
   const path = usePathname().replace("/product", "");
 
-  const [productIds, setProductIds] = useState([1, 2, 3]);
+  const [productIds, setProductIds] = useState<number[]>([1, 2, 3]);
   const [primaryProduct, setPrimaryProduct] = useState(0);
 
   useEffect(() => {
     if (!path) return;
-    console.log(path);
     listProduct.forEach((p, i) => {
-      if (p.link === path) return setPrimaryProduct(i);
+      if (p.link === path) {
+        const duplicateIndex = productIds.indexOf(i);
+        const duplicate = duplicateIndex !== -1;
+        if (duplicate) {
+          setProductIds((prev) =>
+            prev.map((n) => (n === prev[duplicateIndex] ? 4 : n))
+          );
+        }
+        setPrimaryProduct(i);
+      }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [path]);
 
   function setAsPrimary(id: number) {
